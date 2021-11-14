@@ -1,7 +1,7 @@
 from typing import List
 from field_validators import *
 
-with open(r"D:\repos\Advent-of-Code-2020\4\4-1\input.txt") as f:
+with open("input.txt") as f:
     batch = f.read()
 
 required = {"byr": byr, "iyr": iyr, "eyr": eyr, "hgt": hgt, "hcl": hcl, "ecl": ecl, "pid": pid}

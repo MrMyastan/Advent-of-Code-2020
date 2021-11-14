@@ -1,7 +1,7 @@
 from typing import List
 
 
-with open(r"D:\repos\Advent-of-Code-2020\4\4-1\input.txt") as f:
+with open("input.txt") as f:
     batch = f.read()
 
 required = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
