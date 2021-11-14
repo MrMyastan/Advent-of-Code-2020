@@ -1,0 +1,31 @@
+from typing import List
+
+
+with open(r"D:\repos\Advent-of-Code-2020\4\4-1\input.txt") as f:
+    batch = f.read()
+
+required = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
+
+batch = batch.split("\n\n")
+
+def flatten_pass(passport: str) -> List[str]:
+    fields = []
+    for line in passport.splitlines():
+        for field in line.split(" "):
+            fields.append(field)
+    return fields
+
+def verify_pass(passport: list) -> bool:
+    if len(passport) < len(required):
+        return False
+    requirements_met = 0
+    for field in passport:
+        if field[0:3] in required:
+            requirements_met += 1
+    return requirements_met == len(required)
+
+valid = 0
+for passport in map(flatten_pass, batch):
+    valid += verify_pass(passport)
+
+print(valid)
